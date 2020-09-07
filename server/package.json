@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "nodemon index.js",
+    "initDB": "node scripts/initDB.js",
+    "start:mongo": "docker container rm -f dockerCalendar ; docker container run --name dockerCalendar -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=julix -e MONGO_INITDB_ROOT_PASSWORD=secret -v $(pwd)/data:/data/db -d mongo:latest"
+  }
+}
